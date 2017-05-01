@@ -1,6 +1,11 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h> 
-#include <ESP8266WebServer.h>
+
+// size of buffer used to capture HTTP requests
+#define REQ_BUF_SZ   90
+// size of buffer that stores the incoming string
+#define TXT_BUF_SZ   50
+
 
 const char* ssid = "WiFi iData_469C";
 const char* password = "12345678";
@@ -18,12 +23,25 @@ char alarmHour = 19, alarmMin = 15;
 char volume = 15;
 char snoozeHour, snoozeMin, snoozeTime = 1;
 
+String HTTP_req[REQ_BUF_SZ] = {}; // buffered HTTP request stored as null terminated string
+char req_index = 0;              // index into HTTP_req buffer
+char txt_buf[TXT_BUF_SZ] = {0};  // buffer to save text to
+
+
 //Functions
 void webServerInit();
 void webServerLoop();
 bool readPinState(int pin);
 void handleSubmit();
 void sendConfigData();
+
+// sets every element of str to 0 (clears array)
+void StrClear(char *str, char length)
+{
+    for (int i = 0; i < length; i++) {
+        str[i] = 0;
+    }
+}
 
 void setup() {
   // initialize serial communication:
@@ -90,38 +108,55 @@ void webServerLoop(){
   while(!client.available()){
     delay(1);
   }
+
+  String request;
  
-  // Read the first line of the request
-  String request = client.readStringUntil('\r');
-  Serial.println(request);
+   // Read the first line of the request
+
+     request = client.readStringUntil('\r\n');
+     Serial.println(request);
   client.flush();
+
+
+//  
  
   // Match the request
  
   int value = LOW;
   if (request.indexOf("/ALARM=ON") != -1) {
-    digitalWrite(ledPin, HIGH);
-    Serial.end();
-    Serial.begin(11500);
-    Serial.print('H');
-    delay(10000);
-    Serial.end();
+    int index = request.indexOf("/ALARM=ON");
+    Serial.println(index);
+    Serial.println(request);
+    request.concat(
+    index = request.indexOf("HTTP");
+    Serial.println("HTTP index: ");
+    Serial.println(index);
+//    digitalWrite(ledPin, HIGH);
+//    Serial.end();
+//    Serial.begin(11500);
+//    Serial.print('H');
+//    delay(10000);
+//    Serial.end();
     value = HIGH;
   } 
   if (request.indexOf("/ALARM=OFF") != -1){
     digitalWrite(ledPin, LOW);
-    Serial.end();
-    Serial.begin(11500);
-    Serial.print('L');
-    delay(10000);
-    Serial.end();
+//    Serial.end();
+//    Serial.begin(11500);
+//    Serial.print('L');
+//    delay(10000);
+//    Serial.end();
     value = LOW;
   }
 
-  if (request.indexOf("/submit") != -1){
-//    handleSubmit();
+ 
+   
   
-  }
+
+//  if (request.indexOf("/submit") != -1){
+////    handleSubmit();
+//  
+//  }
 
 
 //  server.on("/submit", handleSubmit);
@@ -154,12 +189,11 @@ void webServerLoop(){
   client.println("</html>");
  
   delay(1);
-  Serial.begin(9600);
   Serial.println("Client disconnected");
   Serial.println("");
 
-  client.stop();
-  sendConfigData();
+//  client.stop();
+//  sendConfigData();
 
   
  
