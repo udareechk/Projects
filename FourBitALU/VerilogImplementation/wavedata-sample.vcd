@@ -1,0 +1,193 @@
+$date
+	Fri Apr  1 06:48:16 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbed $end
+$var wire 4 ! C [3:0] $end
+$var reg 4 " A [3:0] $end
+$var reg 4 # B [3:0] $end
+$var reg 4 $ C_twoscomplement [3:0] $end
+$var reg 1 % load1 $end
+$var reg 1 & load2 $end
+$var reg 2 ' op_select [1:0] $end
+$var reg 1 ( run $end
+$scope module mu_alu $end
+$var wire 4 ) A [3:0] $end
+$var wire 4 * B [3:0] $end
+$var wire 4 + C [3:0] $end
+$var wire 1 , load1 $end
+$var wire 1 - load2 $end
+$var wire 2 . op_select [1:0] $end
+$var wire 1 / run $end
+$var reg 4 0 accum [3:0] $end
+$var reg 4 1 op1 [3:0] $end
+$var reg 4 2 op2 [3:0] $end
+$var reg 4 3 tempout [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 3
+bx 2
+bx 1
+bx 0
+x/
+bx .
+x-
+x,
+bx +
+b10 *
+b101 )
+x(
+bx '
+x&
+x%
+bx $
+b10 #
+b101 "
+bx !
+$end
+#5
+b101 1
+1%
+1,
+#10
+0%
+0,
+#15
+b1010 3
+b10 2
+1&
+1-
+#20
+0&
+0-
+#25
+b111 3
+b0 '
+b0 .
+#30
+b111 $
+b111 0
+b111 !
+b111 +
+1(
+1/
+#35
+0(
+0/
+#40
+b1 '
+b1 .
+#45
+1(
+1/
+#50
+0(
+0/
+#55
+b11 3
+b10 '
+b10 .
+#60
+b11 $
+b11 0
+b11 !
+b11 +
+1(
+1/
+#65
+0(
+0/
+#70
+b1010 3
+b11 '
+b11 .
+#75
+b1010 $
+b1010 0
+b1010 !
+b1010 +
+1(
+1/
+#80
+0(
+0/
+#85
+b101 #
+b101 *
+b10 "
+b10 )
+#90
+b100 3
+b10 1
+1%
+1,
+#95
+0%
+0,
+#100
+b1010 3
+b101 2
+1&
+1-
+#105
+0&
+0-
+#110
+b111 3
+b0 '
+b0 .
+#115
+b111 $
+b111 0
+b111 !
+b111 +
+1(
+1/
+#120
+0(
+0/
+#125
+b1 '
+b1 .
+#130
+1(
+1/
+#135
+0(
+0/
+#140
+b1101 3
+b10 '
+b10 .
+#145
+b1101 $
+b1101 0
+b1101 !
+b1101 +
+1(
+1/
+#150
+0(
+0/
+#155
+b1010 3
+b11 '
+b11 .
+#160
+b1010 $
+b1010 0
+b1010 !
+b1010 +
+1(
+1/
+#165
+0(
+0/

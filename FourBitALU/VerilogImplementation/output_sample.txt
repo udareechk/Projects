@@ -1,0 +1,11 @@
+VCD info: dumpfile wavedata.vcd opened for output.
+0101 ^ 0010 = 0111
+ 5 +  2 =  7
+ 5 -  2 =  3
+ 5 *  2 = 10
+
+0010 ^ 0101 = 0111
+ 2 +  5 =  7
+ 2 -  5 = -3
+ 2 *  5 = 10
+
