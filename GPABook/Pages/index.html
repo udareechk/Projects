@@ -1,0 +1,184 @@
+<html>
+	<head>
+		<tital></tital>
+		<style type="text/css">
+			body{
+				margin:0;
+				background-image:url("../Images/Pictures/tra.jpg");
+				overflow: hidden;
+				min-width: auto;
+				min-height: auto;
+
+			}
+			#TopHeader{
+				width: 100%;
+				height: 80px;
+				background-color:#19194d;
+				box-shadow: 0px 2px 10px #000033;
+
+			}
+
+			#others{
+				position:absolute;
+				text-align: center;
+				color: white;
+				top: 4%;
+				left:80%;
+
+			}
+			#aboutUs{
+				padding-left: 10px;
+
+			}
+
+			#TopHeader>h1{
+				position: absolute;
+				left:7% ;
+				color: white;
+				font-size: 50px;
+				font-family: arial;
+				margin: 0px auto;
+				padding: 0.5%;
+
+			}
+			.btn-btn-lg-btn-primary-btn-block{
+				position: relative;
+				border-radius: 3%;
+				background-color:#6666ff ;
+				color: black;
+				font-size: 20px;
+				top:5px;
+				left: 0px;
+				width: 270px;
+				height: 15%;
+				border: none;
+
+			}
+			.form-signin{
+   				max-width: 330px;
+    			padding: 15px;
+   				margin: 0 auto;
+			}
+			.form-signin .form-signin-heading, .form-signin .checkbox{
+			    margin-bottom: 10px;
+			}
+			.form-signin .checkbox{
+			    font-weight: normal;
+			}
+			.form-signin .form-control{
+    			position: relative;
+    			font-size: 16px;
+    			height: auto;
+    			padding: 10px;
+    			-webkit-box-sizing: border-box;
+    			-moz-box-sizing: border-box;
+    			box-sizing: border-box;
+			}
+			.form-signin .form-control:focus{
+ 			   z-index: 2;
+			}
+			.form-signin input[type="text"]
+			{
+				width: 270px;	
+   				margin-bottom: -1px;
+    			border-bottom-left-radius: 0;
+    			border-bottom-right-radius: 0;
+			}
+			.form-signin input[type="password"]{
+				width: 270px;
+    			margin-bottom: 10px;
+    			border-top-left-radius: 0;
+    			border-top-right-radius: 0;
+			}
+			.account-wall{
+				width:300px;
+				height: 400px;
+    			margin-top: 90px;
+    			margin-left:170px ;
+    			padding: 40px 0px 20px 0px;
+    			background-color: #f7f7f7;
+    			-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    			-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+			}
+			.login-title{
+			    color: #555;
+    			font-size: 18px;
+    			font-weight: 400;
+    			display: block;
+			}
+			.profile-img{
+    			width: 170px;
+   				height: 170px;
+    			margin: 0 auto 10px;
+    			display: block;
+			}
+			.need-help{
+				position: relative;
+				top:10px;
+				left: 200px;
+    			margin-top: 400px;
+
+			}
+			.new-account{
+				position: relative;
+				top:-18px;
+    			display: block;
+    			margin-top: 10px;
+			}
+
+			#createAnAccount{
+				position: relative;
+				margin-left: 15px;
+				margin-bottom: 20px;
+			}
+
+		</style>
+
+
+
+	</head>	
+	<body>
+
+		<div id ="TopHeader">
+			<h1><span font-family: courier>GPA</span> Book</h1>
+		</div>
+
+		<div id = "others">
+				<a id="aboutGpaBook" href=""><span style="color:white">About GPA Book </span></a>
+				<a id="aboutUs" href=""><span style="color:white"> About Us</span></a>
+			</div>
+
+		
+		<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <img class="profile-img" src="../Images/Pictures/gLogo.png">
+                
+                <form class="form-signin" action="Authenticate.php" method ="post">
+                <input type="text" name="email" class="form-control" placeholder="Email" required autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                <button class="btn-btn-lg-btn-primary-btn-block" type="submit" value ="">
+                    Sign in</button>
+				</form>
+				
+				<form>
+				<br>
+                <a href="SignUp.php" id="createAnAccount">Create an account </a>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+	
+
+	<script type="text/javascript">
+
+	</script>
+
+	
+
+	</body>
+</html>
